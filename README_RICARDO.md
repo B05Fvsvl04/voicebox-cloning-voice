@@ -88,7 +88,8 @@ Y ampliar el `mkdir` de directorios de datos para incluir el caché de Triton:
 
 ```dockerfile
 RUN mkdir -p /app/data/generations /app/data/profiles /app/data/cache/triton \
-    && chown -R voicebox:voicebox /app/data
+             /home/voicebox/.cache/huggingface \
+    && chown -R voicebox:voicebox /app/data /home/voicebox/.cache
 ```
 
 > Si Triton falla en el enlazado, reemplazar `gcc libc6-dev` por
